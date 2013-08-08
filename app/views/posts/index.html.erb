@@ -1,0 +1,21 @@
+<h1>El nuevo Blog...</h1>
+<br>
+<table class="table">
+	<tr>
+		<th>Id</th>
+		<th>Title</th>
+		<th>Status</th>
+		<th></th>
+	</tr>
+	<% @posts.each do |post| %>
+	<tr>
+		<td class="centered-text"><%=post.id%></td>
+		<td>
+			<%=post.title%><br>
+			<span class="text-muted">Comments <span class="badge"><%=post.comments.count%></span></class>
+		</td>
+		<td><span class="label label-success"><%=post.status%></span></td>
+		<td><a href="<%=post_path(post)%>" class="btn btn-primary btn-sm">Ver mas</a></td>
+	</tr>
+	<%end%>
+</table>
